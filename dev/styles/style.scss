@@ -1,0 +1,259 @@
+@import "partials/_setup";
+@import "partials/_mediaqueries";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+header {
+  height: 80vh;
+  background-image: url(../../assets/backgroundImageCrop.jpg);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.query .wrapper {
+  display:flex;
+  justify-content: center;
+  padding: 50px 0px;
+}
+
+form {
+  margin: 25px 0;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+h2, option {
+  font-size: 3rem;
+  font-family: 'Abril Fatface', cursive;
+  margin: 25px 0;
+  color: #4a4a4a
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-family: 'Montserrat',
+  sans-serif;
+  text-transform: uppercase;
+  margin:0;
+  color: #4a4a4a
+}
+
+p {
+  color: #4a4a4a;
+  font-size: 1.4rem;
+}
+
+
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+
+// SEARCH QUERY
+
+/* Dropdown Effects - with a little help from: https://codepen.io/gcampfield/pen/vErOOq  */
+
+.effects {
+  // width: 100%;
+  margin: 0;
+  padding-top: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 0;
+      flex: 0 0 0; 
+      // transition: all .5s ease;
+      font-size: 0;
+      font-family: 'Abril Fatface', cursive;
+      color:#4a4a4a;
+    }
+  }
+
+  label,
+  &:hover li {
+    flex: 1 1;
+    padding: 0 0 0 10px;
+    font-size: 3rem;
+    font-family: 'Abril Fatface', cursive;
+  }
+  
+  label {
+    text-decoration: underline;
+    margin-top: 5px;
+    color: #967619;
+  }
+}
+
+.effects .selected {
+  color: #967619; 
+  &:hover {
+    background: #fff;
+  }
+}
+
+.labelContainer {
+  display: flex;
+}
+
+.fa-angle-down {
+  font-size: 3rem;
+  padding-left: 10px;
+}
+
+.chevron {
+  margin-top: 15px;
+  color: #967619;
+}
+
+// SEARCH QUERY END
+
+//CARDS
+
+.resultsContainer {
+  // position: relative;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  // border: #a4a4a4 1px solid;
+  flex: 0 0 calc(100% / 3 - 30px);
+  margin: 15px 15px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+  0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card:hover{
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.cardImage{
+  background-color: #ad5666;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.cardBottom {
+  padding:20px;
+  display:flex;
+  flex-direction: column;
+}
+
+.expand {
+  text-align:right;
+}
+
+.fa-plus-circle {
+  font-size: 3rem;
+}
+
+// CARDS END
+
+// FOOTER
+img{
+  max-width:100%;
+}
+
+footer{
+  background-color: #7c4475;
+} 
+
+footer img {
+  display:block;
+}
+
+.insta-container {
+  display:flex;
+}
+
+footer h6 {
+  margin: 0;
+}
+
+
+
+
+//FOOTER END
+
+///
+
+/* MEDIA QUERY*/
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1080px) {
+  .card {
+    flex: 1 0 calc(100% / 2 - 30px);
+    margin: 15px 15px;
+  }
+}
+
+/*end of 1080px media query*/
+
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 768px) {
+  .resultsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .cardTop {
+    flex: 1 1 20%;
+  }
+  .cardImage {
+    height: 100px;
+    padding: 0px 20px;
+  }
+  .cardImage img {
+    width: 50px;
+  }
+  .cardBottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 80%;
+  }
+  .expand {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .insta-container {
+    display:none;
+  }
+
+}
+
+/* Landscape phones and down */
+
+@media (max-width: 480px) {}
